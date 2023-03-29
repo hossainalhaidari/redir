@@ -48,8 +48,7 @@ func getKey(key string) (string, error) {
 	for scanner.Scan() {
 		text := scanner.Text()
 		if strings.HasPrefix(text, key+" ") {
-			text = strings.TrimLeft(text, key+" ")
-			return text, scanner.Err()
+			return text[len(key+" "):], scanner.Err()
 		}
 	}
 
