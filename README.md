@@ -13,3 +13,8 @@
 ```
 
 - Run `go run .` to start the server locally at `http://localhost:3000`.
+- Or by using docker:
+
+```sh
+docker run -p 3000:3000 -v _redirects:/app/_redirects -d hossainalhaidari/redir
+```
