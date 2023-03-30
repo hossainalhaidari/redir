@@ -1,7 +1,7 @@
 FROM golang:alpine AS build
 WORKDIR /src
 COPY *.go go.* /src
-RUN CGO_ENABLED=0 go build -o /bin/redir
+RUN go build -o /bin/redir
 
 FROM scratch
 WORKDIR /app
