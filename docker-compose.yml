@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  redir:
+    container_name: redir
+    image: hossainalhaidari/redir
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./_redirects
+        target: /app/_redirects
