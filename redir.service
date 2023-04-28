@@ -1,0 +1,17 @@
+[Unit]
+Description=Redir
+ConditionPathExists=/root/redir
+After=network.target
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root
+ExecStart=/root/redir
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=redirservice
+[Install]
+WantedBy=multi-user.target

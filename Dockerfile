@@ -1,6 +1,6 @@
 FROM golang:alpine AS build
 WORKDIR /src
-COPY *.go go.* /src
+COPY *.go go.* /src/
 RUN go build -o /bin/redir
 
 FROM scratch
